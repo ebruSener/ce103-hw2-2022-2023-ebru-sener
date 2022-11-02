@@ -210,7 +210,10 @@ char* ce103_strrev(char* fiStr)
 **/
 int ce103_strlen(const char* fiStr)
 {
-	
+	int i = 0;
+	while (fiStr[i] != '\0')
+		i++;
+	return i;
 }
 
 /**
