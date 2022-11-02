@@ -355,7 +355,16 @@ void ce103_hex2bin(char* fiHex, int fiHexLen, unsigned char* foBin)
 */
 void ce103_bin2hex(unsigned char* fiBin, int fiBinLen, char* foHex)
 {
-	
+	int c, d, * end = fiBin + fiBinLen;
+	while (fiBin < end) {
+		c = *(fiBin++);
+		d = c >> 4;
+		*(foHex++) = d + (d > 9 ? 55 : 48);
+		d = c & 15;
+		*(foHex++) = d + (d > 9 ? 55 : 48);
+	}
+	*foHex = 0;
+	return fiBin;
 	
 }
 
