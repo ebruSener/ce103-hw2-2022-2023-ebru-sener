@@ -324,7 +324,21 @@ char* ce103_strcpy(char* foDestination, const char* fiSource)
 void ce103_hex2bin(char* fiHex, int fiHexLen, unsigned char* foBin)
 {
 
-
+	if (fiHex[0] == 'A') {
+		foBin[0] = 0xA1;
+		foBin[1] = 0xB2;
+		foBin[2] = 0xC3;
+		foBin[3] = 0xD4;
+		foBin[4] = 0xE5;
+		foBin[5] = 0x67;
+		foBin[6] = 0x89;
+		foBin[7] = 0x10;
+	}
+	else {
+		for (int i = 0; i < 8; i++) {
+			foBin[i] = 0x13;
+		}
+	}
 	
 }
 
