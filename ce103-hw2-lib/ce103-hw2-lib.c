@@ -175,7 +175,18 @@ int ce103_fibonacciNumber(int fiIndex)
 **/
 char* ce103_strrev(char* fiStr)
 {
+	char temp;
+	int x, y, n;
+	n = ce103_strlen(fiStr);
 
+	// swapping fiStr[x] and fiStr[y] until x<y
+	for (x = 0, y = n - 1; x < y; ++x, --y) {
+		temp = fiStr[y];
+		fiStr[y] = fiStr[x];
+		fiStr[x] = temp;
+	}
+
+	return fiStr;
 }
 
 /**
